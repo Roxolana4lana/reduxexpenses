@@ -9,9 +9,14 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 import {fetchAllPosts} from './actions/index'
+import { fetchAllIncomes } from './actions/index';
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
-store.dispatch(fetchAllPosts())
+
+
+store.dispatch(fetchAllPosts() )
+store.dispatch(fetchAllIncomes())
 
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
