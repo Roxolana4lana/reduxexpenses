@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Post from '../components/Post';
 import { deletePost } from '../actions';
+import CreatePost from './CreatePost';
 
 function PostList({ posts, onDelete }) {
     if (!posts.length) {
@@ -12,12 +13,17 @@ function PostList({ posts, onDelete }) {
         )
     }
     return (
-        <div>
+        <div className='App'>
+            <div className="split expenses_lising">
             {posts.map(post => {
                 return (
                     <Post post={post} onDelete={onDelete} key={post.id} />
                 );
             })}
+            </div>
+            <div className="split App_Form">
+            <CreatePost/>
+            </div>
         </div>
     );
 }

@@ -34,26 +34,28 @@ export default class NewPost extends Component {
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
-        <div>
+            <form onSubmit={this.handleSubmit} className='formExpenses'>
+                <div className="form-group">
             <input type='text'
                         placeholder="Title"
+                       
                         className="form-control"
                         name="title"
                         onChange={this.handleInputChange}
                         value={this.state.title}
                     />
         </div>
-                <div>
+                <div className="form-group">
                     <input type='text'
                         placeholder="category"
+                        
                         className="form-control"
                         name="category"
                         onChange={this.handleInputChange}
                         value={this.state.category}
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <input type='text'
                         placeholder="Amount"
                         className="form-control"
@@ -63,8 +65,8 @@ export default class NewPost extends Component {
                     />
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary">Add Post</button>
-                    <button type="button" className="btn btn-warning" onClick={this.handleReset}>
+                    <button type="submit" className="btn-save">Add Post</button>
+                    <button type="button" className="btn-save" onClick={this.handleReset}>
                         Reset
             </button>
                 </div>

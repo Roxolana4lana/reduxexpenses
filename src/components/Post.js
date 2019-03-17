@@ -1,23 +1,18 @@
 import React from 'react';
 
-const styles = {
-    borderBottom: '2px solid #eee',
-    background: '#fafafa',
-    margin: '.75rem auto',
-    padding: '.6rem 1rem',
-    maxWidth: '500px',
-    borderRadius: '7px'
-};
+
 
 export default ({ post: { title, category,amount,id}, onDelete }) => {
     return (
-        <div style={styles}>
+        <div className='myBox'>
+        <div className="boxInfo">
             <h2>{title}</h2>
             <p>{category}</p>
             <p>{amount}</p>
-            <button className="btn btn-danger" type="button" onClick={() => onDelete(id)}>
-                Remove
-      </button>
+            </div>
+            <i className="material-icons" 
+                onClick={() => onDelete(id)}>delete</i>
+            
         </div>
     );
 };
