@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import {createPost} from '../actions'
+import { createPost } from '../actions'
 import NewPost from '../components/NewPost'
 
-const mapDispatchToProps = dispatch =>{
-    return{
-        onAddPost: post=>{
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddPost: post => {
             dispatch(createPost(post))
         }
     }
