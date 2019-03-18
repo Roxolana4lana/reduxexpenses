@@ -1,69 +1,80 @@
 @import 'responsive';
+
 *{
     box-sizing: border-box;
     margin:0;
-    padding:
-    0;
+    padding:0;
     font-family: 'Poppins', sans-serif;
-    
-    a{
+    a {
       text-decoration: none;  
     }
 }
 .App{
     display: flex;
     @include breakpoint(s){flex-direction:column-reverse; height: 100%;}
-     @include breakpoint(m){flex-direction:row; height: 100vh;}
-      @include breakpoint(l){flex-direction:row; height: 100vh;}
-    
+    @include breakpoint(m){flex-direction:row; height: 100vh;}
+    @include breakpoint(l){flex-direction:row; height: 100vh;}
 }
 .expenses_lising{
-background-color: #66DAC7;
-left:0;
-margin-top:-3rem;
-        padding-left: 7%;
-        list-style-type: none;
-        overflow: scroll;
-         @include breakpoint(s){width: 100%;padding-top:5rem;}
-     @include breakpoint(m){width: 50%;padding-top:7rem;}
-      @include breakpoint(l){width: 50%;padding-top:10rem;}
+    background-color:#2E4158;
+    left:0;
+    margin-top:-3rem;
+    list-style-type: none;
+    overflow: scroll;
+    @include breakpoint(s){width: 100%;padding-top:1rem;padding-left: 0;}
+    @include breakpoint(m){width: 50%;padding-top:8rem;padding-left: 7%;}
+    @include breakpoint(l){width: 50%;padding-top:5rem;padding-left: 7%;}
 }
  .App_Form{
-          padding-top:10rem;
-background-color:#2E4158;
-right:0;
- color: white;
-        padding-left: 7%;
-                @include breakpoint(s){width: 100%;padding-top:5rem;}
-     @include breakpoint(m){width: 50%;padding-top:7rem;}
-      @include breakpoint(l){width: 50%;padding-top:10rem;}
+    background-color:#2E4158;
+    right:0;
+    color:  #66DAC7;
+    padding-left: 7%;
+    @include breakpoint(s){width: 100%;padding-top:5rem;height: 24rem;padding-left: 0;}
+    @include breakpoint(m){width: 50%;padding-top:7rem;height: 100%;padding-left: 7%}
+    @include breakpoint(l){width: 50%;padding-top:10rem;height: 100%;padding-left: 7%}
     }
 
     .myBox{
-color: white;
+    color:  rgb(201, 230, 224);
     border-bottom: 2px solid rgba(210, 230, 227, 0.74);
     background: rgba(98, 187, 174, 0.39);
-  margin-bottom:1rem;
+    margin-bottom:1rem;
      padding: .5rem 2rem;
      max-width: 30rem;
-        height: 7rem;
+    height: 7rem;
     border-radius: 1rem;
     position: relative;
     display: flex;
     justify-content: space-between;
-    // margin-right: 5rem;
-    // margin-bottom: 1rem;
-    // padding:0.5rem;
-
     }
 
-     @mixin buttonSave
-    {
-         background: -moz-linear-gradient(top, #3acfd5 0%,  rgb(28, 40, 56) 100%);
-   background: -webkit-linear-gradient(top, #3acfd5 0%, rgb(28, 40, 56) 100%);
-  background: linear-gradient(to right, #3acfd5 0%, rgb(28, 40, 56) 100%);
-  border: none;
-  -moz-border-radius:6px;
+     @mixin buttonSave{
+    background: -moz-linear-gradient(top, #3acfd5 0%,  rgb(28, 40, 56) 100%);
+     background: -webkit-linear-gradient(top, #3acfd5 0%, rgb(28, 40, 56) 100%);
+     background: linear-gradient(to right, #3acfd5 0%, rgb(28, 40, 56) 100%);
+    border: none;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    cursor: pointer;
+    font-family:Arial;
+	font-size:1rem;
+	padding:0.5rem 1rem;
+    text-decoration:none;
+    color: rgb(201, 230, 224);
+    font-weight: 1rem;
+    margin:1rem 1rem;
+    outline: none;
+    }
+.btn-save{
+   @include buttonSave;
+   &:hover{
+    background: -moz-linear-gradient(top, rgb(28, 40, 56) 0%,  #3acfd5 100%);
+    background: -webkit-linear-gradient(top, rgb(28, 40, 56) 0%, #3acfd5 100%);
+    background: linear-gradient(to right, rgb(28, 40, 56) 0%, #3acfd5 100%);
+     border: none;
+     -moz-border-radius:6px;
 	-webkit-border-radius:6px;
     border-radius:6px;
     cursor: pointer;
@@ -71,13 +82,12 @@ color: white;
 	font-size:1rem;
 	padding:0.5rem 1rem;
     text-decoration:none;
-color: white;
-  font-weight: 1rem;
+    color: rgb(201, 230, 224);
+    font-weight: 1rem;
     margin:1rem 1rem;
-    }
-.btn-save{
-   @include buttonSave;
+   }
 }
+
 
 .form-group{
    margin: 2.2% 0;
@@ -86,27 +96,25 @@ color: white;
     justify-content: baseline;
 }
 .form-control{
-   background: transparent;
-width: 30rem;
- 
-  font-size: 1.5rem;
-margin-left:1rem;
-  outline: none !important;
- border: 0.1rem solid transparent;
- border-top: none;
- border-left:none ;
- border-right: none;
-  -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, rgb(135, 146, 160) 100%);
-  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, rgb(135, 146, 160) 100%);
-  border-image: linear-gradient(to right, #3acfd5 0%, rgb(135, 146, 160) 100%);
-  border-image-slice: 1;
-  
+    background: transparent;
+    width: 30rem;
+    font-size: 1.5rem;
+    margin-left:1rem;
+    outline: none !important;
+    border: 0.1rem solid transparent;
+    border-top: none;
+    border-left:none ;
+    border-right: none;
+    -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, rgb(135, 146, 160) 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, rgb(135, 146, 160) 100%);
+    border-image: linear-gradient(to right, #3acfd5 0%, rgb(135, 146, 160) 100%);
+    border-image-slice: 1;
 }
 
-i{
-color: white;
-margin-top:2rem;
-cursor:pointer;
+i { 
+    color:rgb(201, 230, 224);
+    margin-top:2rem;
+    cursor:pointer;
 }
 i:hover{
   margin-top: 1.8rem;  
@@ -121,13 +129,17 @@ i:hover{
     width: 100%;
 list-style-type: none;
    position: fixed;
+   z-index:2;
+      @include breakpoint(s){background-color:#2E4158;height:4rem;}
+     @include breakpoint(m){background-color:#2E4158;height: 5rem;}
+      @include breakpoint(l){background-color: rgba(46, 65, 88, 0);}
    li{
        display: inline-block;
        margin-right: 7%;
        margin-top:2%;
        margin-bottom: 1rem;
    }
-   li a{
+   li a,h2{
 
 color: white;
 font-size: 1.5rem;
@@ -135,4 +147,37 @@ font-size: 1.5rem;
     color: #66DAC7;
 }
    }
+}
+.portalDiv{
+        color:#2E4158;
+         padding: 2rem;
+        background: #66DAC7;
+        border-radius: 2rem;
+        display: inline-block;
+        min-height: 25rem;
+        margin: 1rem;
+        position: relative;
+        min-width: 25rem;
+        box-shadow:0 3px 6px rgba(0,0,0,0.66), 0 3px 6px rgba(0,0,0,0.63);
+        justify-self: center;
+                    }
+ .portalBack {
+    position: absolute;
+     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+ }
+
+ .errorMessage{
+    color: red;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top:-0.6rem;
+   
 }
