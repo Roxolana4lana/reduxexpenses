@@ -1,24 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import Income from '../components/Income'
 import { deleteIncome } from '../actions'
+import CreateIncome from './CreateIncome';
 
 function IncomeList({ incomes, onDelete }) {
     if (!incomes.length) {
         return (
             <div>
-                Noposts</div>
+                No posts</div>
         )
     }
 
-
     return (
-        <div>
+        <div className='App'>
+            <div className="split expenses_lising">
             {incomes.map(income => {
                 return (
                     <Income income={income} onDelete={onDelete} key={income.id} />
                 )
             })}
+            </div>
+            <div className="split App_Form">
+            <CreateIncome/>
+            </div>
         </div>
     )
 }
