@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
- class Info extends Component {
- 
-  render() {
-
+ function Info({incomes,posts}) {
     let initialValue = 0;
-    const sumIncomes = this.props.incomes.reduce(function (accumulator, currentValue) {
+    const sumIncomes = incomes.reduce(function (accumulator, currentValue) {
       return accumulator + currentValue.amount;
     }, initialValue)
     let initial = 0;
-    const sumExpenses = this.props.posts.reduce(function (accumulator, currentValue) {
+    const sumExpenses = posts.reduce(function (accumulator, currentValue) {
       return accumulator + currentValue.amount;
     }, initial)
 const countSavings = sumIncomes - sumExpenses
@@ -24,7 +21,7 @@ const countSavings = sumIncomes - sumExpenses
       </div>
     )
   }
-}
+
 const mapStateToProps = state => {
   return {
     incomes: state.incomes,
