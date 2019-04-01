@@ -1,15 +1,16 @@
-import React from 'react';
+import React from "react";
 
-export default ({ post: { title, category,amount,id}, onDelete }) => {
-    return (
-        <div className='myBox'>
-        <div className="boxInfo">
-            <h2>{title}</h2>
-            <p>{category}</p>
-            <p>Amount: {amount}</p>
-            </div>
-            <i className="material-icons" 
-            onClick={() => onDelete(id)}>delete</i>
-        </div>
-    );
+export default ({ post: { title, category, amount, id }, onDelete }) => {
+  return (
+    <div className="myBox">
+      <div className="boxInfo">
+        <h2>{title}</h2>
+        <p>{category}</p>
+        <p>Amount: {amount}</p>
+      </div>
+      <i className="material-icons" onClick={() => onDelete(id)}>
+        delete
+      </i>
+    </div>
+  );
 };
